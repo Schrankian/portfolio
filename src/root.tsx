@@ -1,6 +1,7 @@
 import { component$, isDev } from "@builder.io/qwik";
 import { QwikCityProvider, RouterOutlet } from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
+import { RouterHead } from "./components/RouterHead";
+import { RestoreColorScheme } from "./components/DarkModeToggle";
 
 import "./global.css";
 
@@ -15,6 +16,7 @@ export default component$(() => {
   return (
     <QwikCityProvider>
       <head>
+        <RestoreColorScheme />
         <meta charset="utf-8" />
         {!isDev && (
           <link

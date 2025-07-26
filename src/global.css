@@ -1,0 +1,297 @@
+/* Theme Variables */
+:root {
+	--color-bg: #f8f9fa;
+	--color-text: #212529;
+
+	--color-primary: #4f46e5;
+	/* Indigo 600 */
+	--color-primary-light: #6366f1;
+	/* Indigo 500 */
+	--color-primary-dark: #3730a3;
+	/* Indigo 800 */
+	--color-on-primary: #ffffff;
+
+	--color-accent: #0ea5e9;
+	/* Sky 500 */
+	--color-accent-light: #38bdf8;
+	--color-accent-dark: #0284c7;
+	--color-on-accent: #ffffff;
+
+	--color-muted: #e9ecef;
+	--color-on-muted: #7d8185;
+	--color-border: #dee2e6;
+	--color-shadow: rgba(0, 0, 0, 0.05);
+
+	--radius-border: 0.375rem;
+}
+
+[data-theme="dark"] {
+	--color-bg: #121212;
+	--color-text: #f1f3f5;
+
+	--color-primary: #6366f1;
+	/* Indigo 500 – maintains visibility and brand feel */
+	--color-primary-light: #818cf8;
+	/* Indigo 400 */
+	--color-primary-dark: #4f46e5;
+	/* Indigo 600 – now the "dark" variant shows better contrast on dark bg */
+	--color-on-primary: #ffffff;
+
+	--color-accent: #38bdf8;
+	/* Sky 400 – slightly lighter for better vibrance on dark bg */
+	--color-accent-light: #7dd3fc;
+	/* Sky 300 */
+	--color-accent-dark: #0ea5e9;
+	/* Sky 500 */
+	--color-on-accent: #000000;
+
+	--color-muted: #2a2a2a;
+	/* Subtle muted background for cards/elements */
+	--color-on-muted: #888c8f;
+	/* dark gray for contrast on light muted background */
+	--color-border: #2f3336;
+	/* Low-contrast border matching dark theme */
+	--color-shadow: rgba(0, 0, 0, 0.6);
+	/* Stronger shadow on dark surfaces */
+}
+
+/* Base reset and normalization */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML root setup */
+html {
+	font-size: 16px;
+	line-height: 1.5;
+	color-scheme: light dark;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/* Body layout and theming */
+body {
+	min-height: 100vh;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	font-family: system-ui, sans-serif;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+	line-height: 1.25;
+	margin-bottom: 0.5em;
+	color: var(--color-text);
+}
+
+/* Scale for headings */
+h1 {
+	font-size: 2.25rem;
+	letter-spacing: -0.02em;
+}
+
+h2 {
+	font-size: 1.875rem;
+	letter-spacing: -0.015em;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+}
+
+h5 {
+	font-size: 1.125rem;
+}
+
+h6 {
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+a:focus,
+a:hover {
+	color: var(--color-primary-light);
+}
+
+/* Buttons */
+button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5em 1.25em;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.25;
+	border-radius: var(--radius-border);
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+	background-color: var(--color-primary);
+	color: var(--color-on-primary);
+	border: none;
+	box-shadow: 0 2px 4px var(--color-shadow);
+	text-align: center;
+	user-select: none;
+}
+
+/* Hover & focus states */
+button:hover,
+button:focus-visible {
+	background-color: var(--color-primary-light);
+	box-shadow: 0 4px 6px var(--color-shadow);
+	outline: none;
+}
+
+/* Disabled state */
+button:disabled {
+	background-color: var(--color-muted);
+	color: var(--color-on-muted);
+	cursor: default;
+	box-shadow: none;
+}
+
+/* Flex Utility */
+.flex {
+	display: flex;
+}
+
+.inline-flex {
+	display: inline-flex;
+}
+
+.cross-axis-center {
+	align-items: center;
+}
+
+.main-axis-center {
+	justify-content: center;
+}
+
+.main-axis-space-between {
+	justify-content: space-between;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+/* spacing Utility */
+.w-full { width: 100%; } 
+.w-screen { width: 100vw; } .min-w-screen { min-width: 100vw; }
+.w-1\/2 { width: 50%; } .w-1\/3 { width: 33.333%; } .w-2\/3 { width: 66.666%; } .w-1\/4 { width: 25%; } .w-3\/4 { width: 75%; } 
+
+.h-full { height: 100%; } 
+.h-screen { height: 100vh; } .min-h-screen { min-height: 100vh; }
+.h-1\/2 { height: 50%; } .h-1\/3 { height: 33.333%; } .h-2\/3 { height: 66.666%; } .h-1\/4 { height: 25%; } .h-3\/4 { height: 75%; } 
+
+
+/* Spacing utilities */
+.p-1 { padding: 0.25rem; } .p-2 { padding: 0.5rem; } .p-3 { padding: 0.75rem; } .p-4 { padding: 1rem; }
+.px-1 { padding-left: 0.25rem; padding-right: 0.25rem; } .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; } .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; } .px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; } .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; } .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; } .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.pt-1 { padding-top: 0.25rem; } .pt-2 { padding-top: 0.5rem; } .pt-3 { padding-top: 0.75rem; } .pt-4 { padding-top: 1rem; }
+.pb-1 { padding-bottom: 0.25rem; } .pb-2 { padding-bottom: 0.5rem; } .pb-3 { padding-bottom: 0.75rem; } .pb-4 { padding-bottom: 1rem; }
+.pl-1 { padding-left: 0.25rem; } .pl-2 { padding-left: 0.5rem; } .pl-3 { padding-left: 0.75rem; } .pl-4 { padding-left: 1rem; }
+.pr-1 { padding-right: 0.25rem; } .pr-2 { padding-right: 0.5rem; } .pr-3 { padding-right: 0.75rem; } .pr-4 { padding-right: 1rem; }
+
+.m-1 { margin: 0.25rem; } .m-2 { margin: 0.5rem; } .m-3 { margin: 0.75rem; } .m-4 { margin: 1rem; }
+.mx-1 { margin-left: 0.25rem; margin-right: 0.25rem; } .mx-2 { margin-left: 0.5rem; margin-right: 0.5rem; } .mx-3 { margin-left: 0.75rem; margin-right: 0.75rem; } .mx-4 { margin-left: 1rem; margin-right: 1rem; }
+.my-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; } .my-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; } .my-3 { margin-top: 0.75rem; margin-bottom: 0.75rem; } .my-4 { margin-top: 1rem; margin-bottom: 1rem; }
+.mt-1 { margin-top: 0.25rem; } .mt-2 { margin-top: 0.5rem; } .mt-3 { margin-top: 0.75rem; } .mt-4 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.25rem; } .mb-2 { margin-bottom: 0.5rem; } .mb-3 { margin-bottom: 0.75rem; } .mb-4 { margin-bottom: 1rem; }
+.ml-1 { margin-left: 0.25rem; } .ml-2 { margin-left: 0.5rem; } .ml-3 { margin-left: 0.75rem; } .ml-4 { margin-left: 1rem; }
+.mr-1 { margin-right: 0.25rem; } .mr-2 { margin-right: 0.5rem; } .mr-3 { margin-right: 0.75rem; } .mr-4 { margin-right: 1rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Border utilities */
+.border {
+	border: 1px solid var(--color-border);
+}
+
+.border-t {
+	border-top: 1px solid var(--color-border);
+}
+
+.border-b {
+	border-bottom: 1px solid var(--color-border);
+}
+
+.border-l {
+	border-left: 1px solid var(--color-border);
+}
+
+.border-r {
+	border-right: 1px solid var(--color-border);
+}
+
+.rounded {
+	border-radius: var(--radius-border);
+}
+
+.rounded-full {
+	border-radius: 9999px;
+}
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+.font-normal { font-weight: 400; }
+.uppercase { text-transform: uppercase; }
+
+/* Color utilities */
+.bg-primary { background-color: var(--color-primary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-muted { background-color: var(--color-muted); }
+.bg-transparent { background-color: transparent; }
+
+.text-primary { color: var(--color-primary); }
+.text-accent { color: var(--color-accent); }
+.text-muted { color: var(--color-on-muted); }
+.text-on-primary { color: var(--color-on-primary); }
+.text-on-accent { color: var(--color-on-accent); }
+.text-on-muted { color: var(--color-on-muted); }
+
+/* Cursor utilities */
+.cursor-pointer { cursor: pointer; }
+.pointer-events-none { pointer-events: none; }
+.select-none { user-select: none; }

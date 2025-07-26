@@ -36,6 +36,9 @@
     "typescript-plugin-css-modules": "latest",
     "undici": "*",
     "vite": "5.3.5",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "@qwikest/icons": "^0.0.13"
+  },
+  "dependencies": {
   }
 }
