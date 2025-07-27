@@ -1,44 +1,82 @@
-import { component$, useTask$, useVisibleTask$, isServer, useContext } from '@builder.io/qwik';
+import { component$, useTask$, useVisibleTask$, isServer, useContext, $, useSignal } from '@builder.io/qwik';
 import { SettingsContext } from '../SettingsProvider';
+import { GoSun24, GoDeviceDesktop24, GoMoon24 } from '@qwikest/icons/octicons'; // You can swap this with lucide or another icon pack
+import styles from './darkModeToggle.module.css';
 
 export const RestoreColorScheme = () => (
   <script
-    dangerouslySetInnerHTML={`
-      (function () {
-        const saved = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const isDark = saved === 'dark' || (!saved && prefersDark);
-        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-      })();
-    `}
+    dangerouslySetInnerHTML={`(function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = saved === 'dark' || ((!saved || saved === 'system') && prefersDark);
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    })();`}
   />
-)
+);
 
 export const DarkModeToggle = component$(() => {
   const settings = useContext(SettingsContext);
+  const mode = useSignal<'light' | 'system' | 'dark'>('light');
 
-  // Runs only in browser, after hydration (client only)
+  // Load the saved theme from LocalStorage once its ready
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
-    const saved = localStorage.getItem('theme');
+    const saved = localStorage.getItem('theme') as 'light' | 'system'| 'dark' | null;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    settings.darkMode = saved === 'dark' || (!saved && prefersDark);
-    document.documentElement.setAttribute('data-theme', settings.darkMode ? 'dark' : 'light');
-  }, {strategy: 'document-ready'});
 
-  // Reactively update document and storage when signal changes
-  useTask$(({ track }) => {
-    track(() => settings.darkMode);
-    if (isServer) {
-      return;
+    if (!saved) {
+      mode.value = 'system';
+      settings.darkMode = prefersDark;
+    } else {
+      mode.value = saved;
+      settings.darkMode = saved === 'dark' || (saved === 'system' && prefersDark);
     }
-    document.documentElement.setAttribute('data-theme', settings.darkMode ? 'dark' : 'light');
-    localStorage.setItem('theme', settings.darkMode ? 'dark' : 'light');
+  }, { strategy: 'document-ready' });
+
+  useTask$(({ track }) => {
+    track(() => mode.value);
+    if (isServer) return;
+
+    let applied = mode.value;
+    if (mode.value === 'system') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      settings.darkMode = prefersDark;
+      applied = prefersDark ? 'dark' : 'light';
+    } else {
+      settings.darkMode = mode.value === 'dark';
+    }
+
+    document.documentElement.setAttribute('data-theme', applied);
+    localStorage.setItem('theme', mode.value);
+  });
+
+  const updateMode = $((value: 'light' | 'system' | 'dark') => {
+    mode.value = value;
   });
 
   return (
-    <button onClick$={() => (settings.darkMode = !settings.darkMode)}>
-      {settings.darkMode ? '🌙 Dark' : '☀️ Light'}
-    </button>
+    <div class={styles.toggleWrapper} aria-label='Dark Mode Toggle'>
+      <button
+        class={[styles.toggleButton, mode.value === 'light' ? styles.active : '']}
+        onClick$={() => updateMode('light')}
+        aria-label="Light Mode"
+      >
+        <GoSun24 />
+      </button>
+      <button
+        class={[styles.toggleButton, mode.value === 'system' ? styles.active : '']}
+        onClick$={() => updateMode('system')}
+        aria-label="System Mode"
+      >
+        <GoDeviceDesktop24 />
+      </button>
+      <button
+        class={[styles.toggleButton, mode.value === 'dark' ? styles.active : '']}
+        onClick$={() => updateMode('dark')}
+        aria-label="Dark Mode"
+      >
+        <GoMoon24 />
+      </button>
+    </div>
   );
 });
