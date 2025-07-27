@@ -12,11 +12,13 @@ import { BackgroundCanvas } from '~/components/BackgroundCanvas';
 export default component$(() => {
 	return (
 		<SettingsProvider>
-			<Header />
-			<BackgroundCanvas class="min-h-half col cross-axis-center pt-5 pb-5 relative" points={70}>
-				<Slot />
-			</BackgroundCanvas>
-			<Footer />
+			<div class="min-h-screen col"> {/* Allow the children to position themselves in the viewport*/}
+				<Header />
+				<BackgroundCanvas class="col cross-axis-center pt-5 pb-5 relative" points={70} maxPoints={150}>
+					<Slot />
+				</BackgroundCanvas>
+				<Footer />
+			</div>
 		</SettingsProvider>
 	);
 });

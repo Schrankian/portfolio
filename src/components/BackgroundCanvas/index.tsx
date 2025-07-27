@@ -7,6 +7,7 @@ export interface BackgroundCanvasProps {
    */
   class?: ClassList | Signal<ClassList>;
   points?: number;
+  maxPoints?: number;
   distanceThreshold?: number;
 }
 
@@ -18,6 +19,7 @@ export const BackgroundCanvas = component$<BackgroundCanvasProps>((props) => {
 
   const POINT_COUNT = props.points ?? 60;
   const DIST_THRESHOLD = props.distanceThreshold ?? 150;
+  const MAX_POINTS = props.maxPoints ?? 100;
 
   useOnDocument(
     'click',
@@ -28,7 +30,7 @@ export const BackgroundCanvas = component$<BackgroundCanvasProps>((props) => {
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
       });
-      pointList.value = [...pointList.value];
+      pointList.value = pointList.value.slice(-MAX_POINTS); // Limit the number of points
       console.log('First point added:', pointList.value[0]);
       console.log('Point added:', pointList.value[pointList.value.length - 1]);
     }),

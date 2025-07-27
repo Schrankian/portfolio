@@ -218,9 +218,68 @@ button:disabled {
 	box-shadow: 0 4px 6px var(--color-shadow);
 }
 
+/* Form styling */
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+form input {
+	width: 100%;
+	padding: 0.5em 1em;
+	font-size: 1rem;
+	border: 1px solid var(--color-border);
+	border-radius: var(--border-radius);
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2); /* Indigo 600 with opacity */
+	outline: none;
+}
+
+form textarea {
+	width: 100%;
+	padding: 0.5em 1em;
+	font-size: 1rem;
+	border: 1px solid var(--color-border);
+	border-radius: var(--border-radius);
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	resize: vertical;
+}
+
+form textarea::-webkit-resizer {
+	width: 16px;
+	height: 16px;
+	background: 
+		linear-gradient(135deg, transparent 60%, var(--color-primary) 60%, var(--color-primary) 65%, transparent 65%),
+		linear-gradient(135deg, transparent 75%, var(--color-primary-light) 75%, var(--color-primary-light) 80%, transparent 80%);
+}
+
+form textarea:disabled::-webkit-resizer {
+	visibility: hidden;
+}
+
+form textarea:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2); /* Indigo 600 with opacity */
+	outline: none;
+}
+
+form label {
+	font-weight: 400;
+	color: var(--color-text);
+}
+
 /* Scrollbar styles */
 ::-webkit-scrollbar {
-	width: 10px;;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-button {
@@ -285,6 +344,26 @@ button:disabled {
 .row {
 	display: flex;
 	flex-direction: row;
+}
+
+.gap-1 {
+	gap: 0.25rem;
+}
+
+.gap-2 {
+	gap: 0.5rem;
+}
+
+.gap-3 {
+	gap: 0.75rem;
+}
+
+.gap-4 {
+	gap: 1rem;
+}
+
+.gap-5 {
+	gap: 2rem;
 }
 
 /* spacing Utility */

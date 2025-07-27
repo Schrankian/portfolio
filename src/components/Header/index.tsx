@@ -18,12 +18,12 @@ export const Header = component$(() => {
     <div class={[styles.container, hasScrolled.value ? styles['container-scrolled'] : '']}>
       <div class={styles.content}>
         <Link href="/">
-          <ImageAvatar class="rounded" />
+          <ImageAvatar alt='Small user avatar' class="rounded" />
         </Link>
         <NavBar class={hasScrolled.value ? styles['navbar-scrolled'] : ''} />
         <IconButton href='https://github.com/schrankian/portfolio' class="hover-shadow rounded-full">
-          <ImageGithubWhite q:slot='icon-dark'/>
-          <ImageGithubBlack q:slot='icon-light'/>
+          <ImageGithubWhite alt='GitHub logo (dark mode)' q:slot='icon-dark'/>
+          <ImageGithubBlack alt='GitHub logo (light mode)' q:slot='icon-light'/>
         </IconButton>
       </div>
     </div>

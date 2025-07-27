@@ -2,6 +2,7 @@ import { $, component$ } from '@builder.io/qwik';
 import styles from './home.module.css'
 import { GoChevronDown24 } from '@qwikest/icons/octicons';
 import ImageAvatar from '~/assets/images/avatar.png?w=300&h=300&jsx';
+import { SocialLinks } from '~/components/SocialLinks';
 
 export default component$(() => {
   const scrollDown = $(() => {
@@ -20,11 +21,9 @@ export default component$(() => {
             <p class={styles.description}>
               A passionate developer with a love for creating everything that comes to mind.
             </p>
-            <div class={styles.links}>
-
-            </div>
+            <SocialLinks />
           </div>
-          <ImageAvatar class="rounded-full"/>
+          <ImageAvatar alt='Large user avatar' class="rounded-full"/>
         </div>
         <div class={styles.quote}>
             "The only way to do great work is to love what you do." - Steve Jobs

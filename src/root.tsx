@@ -18,6 +18,8 @@ export default component$(() => {
       <head>
         <RestoreColorScheme />
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="This is my personal portfolio built with care." />
         {!isDev && (
           <link
             rel="manifest"
