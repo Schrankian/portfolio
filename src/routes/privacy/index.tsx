@@ -3,7 +3,7 @@ import { Link } from '@builder.io/qwik-city';
 
 export default component$(() => {
   return (
-    <div class="pt-5 w-3/4 col main-axis-center">
+    <div class="pt-5 w-content col main-axis-center">
       <h1>Privacy Policy</h1>
       <p class="italic">Last updated: June 15, 2022</p>
       <p>This Privacy Policy describes My policies and procedures on the collection, use and disclosure of Your

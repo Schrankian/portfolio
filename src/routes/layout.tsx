@@ -3,14 +3,19 @@ import { DocumentHead } from '@builder.io/qwik-city';
 import { SettingsProvider } from '~/components/SettingsProvider';
 import { Header } from '~/components/Header';
 import { Footer } from '~/components/Footer';
+import { BackgroundCanvas } from '~/components/BackgroundCanvas';
+
+// ----------------------------------------------------------------
+// Root Layout Component
+// ----------------------------------------------------------------
 
 export default component$(() => {
 	return (
 		<SettingsProvider>
 			<Header />
-			<div class="min-h-half col cross-axis-center pt-5 pb-5 relative">
+			<BackgroundCanvas class="min-h-half col cross-axis-center pt-5 pb-5 relative" points={70}>
 				<Slot />
-			</div>
+			</BackgroundCanvas>
 			<Footer />
 		</SettingsProvider>
 	);
