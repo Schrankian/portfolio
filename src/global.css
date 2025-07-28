@@ -311,6 +311,13 @@ form label {
 	color: var(--color-primary);
 }
 
+
+/* ---------------------------- Utility Classes ---------------------------- 
+ These could/should be used for small utility styles across the app.
+ It is not recommended to use these for large components or layouts,
+ as this could be done via tailwind.
+---------------------------------------------------------------------------*/
+
 /* Flex Utility */
 .flex {
 	display: flex;

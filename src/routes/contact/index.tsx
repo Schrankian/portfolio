@@ -3,7 +3,7 @@ import { SocialLinks } from '~/components/SocialLinks';
 
 const Form = component$(() => {
   return (
-    <form>
+    <form action="https://formsubmit.co/contact@fabianschuster.net" method="POST">
       <input type="hidden" name="_subject" value="New submission!" />
       <input type="hidden" name="_template" value="box" />
       <input type="hidden" name="_captcha" value="false" />
@@ -13,7 +13,7 @@ const Form = component$(() => {
       <label>Email</label>
       <input type="email" name="email" placeholder="Enter your Email Adress" required />
       <label>Message</label>
-      <textarea name="message" placeholder="Enter your Message"></textarea>
+      <textarea name="message" placeholder="Enter your Message" style={{ minHeight: '100px' }}></textarea>
       <button type="submit">Send</button>
     </form>
   )

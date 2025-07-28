@@ -1,0 +1,36 @@
+.icon {
+	border-radius: 9999px;
+	width: 65px;
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	padding: 8px;
+	position: relative;
+}
+
+.icon::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	opacity: 0;
+	border-radius: 9999px;
+	background: var(--color-primary);
+	filter: blur(8px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+	transform: scale(0.3);
+}
+
+.icon:hover::before {
+	opacity: 0.4;
+	transform: scale(1);
+}
+
+.icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	display: block;
+}

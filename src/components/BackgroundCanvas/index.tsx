@@ -31,8 +31,6 @@ export const BackgroundCanvas = component$<BackgroundCanvasProps>((props) => {
         vy: (Math.random() - 0.5) * 0.5,
       });
       pointList.value = pointList.value.slice(-MAX_POINTS); // Limit the number of points
-      console.log('First point added:', pointList.value[0]);
-      console.log('Point added:', pointList.value[pointList.value.length - 1]);
     }),
   );
 

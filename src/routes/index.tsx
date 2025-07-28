@@ -17,9 +17,12 @@ export default component$(() => {
       <div class={styles.main}>
         <div class={styles.box}>
           <div class={styles.left}>
-            <h1 class={styles.title}>Hello, I'm <span class="text-primary">Fabian</span></h1>
+            <h1 class={styles.title}>
+              Hey, I'm <span class="text-primary">Fabian</span> <br />
+              A Full Stack {"<Developer />"}
+            </h1>
             <p class={styles.description}>
-              A passionate developer with a love for creating everything that comes to mind.
+              With a love for creating everything that comes to mind.
             </p>
             <SocialLinks />
           </div>
