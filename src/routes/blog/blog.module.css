@@ -1,0 +1,20 @@
+.linkCard {
+	backdrop-filter: blur(10px);
+	padding: 1rem 2rem;
+	border-radius: var(--border-radius);
+	border: 1px solid var(--color-border);
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.1s ease-in-out, background 0.2s ease-in-out;
+	margin: 1rem 0;
+}
+
+.linkCard h2 {
+	color: var(--color-primary);
+}
+
+.linkCard:hover {
+	transform: translateY(-2px);
+	cursor: pointer;
+	background: var(--color-bg-dark);
+}

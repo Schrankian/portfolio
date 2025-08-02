@@ -8,6 +8,7 @@ export interface Route {
 	sub: Array<{
 		path: string;
 		label: string;
+		description?: string;
 	}>;
 }
 
@@ -25,6 +26,37 @@ const routes: Route[] = [
 	{
 		path: "/projects",
 		label: "Projects",
+		sub: [
+			// {
+			// 	path: "/projects/campus-dual-app",
+			// 	label: "Campus Dual App",
+			// 	description: "A mobile app for managing university tasks."
+			// },
+			// {
+			// 	path: "/projects/wordle-clone",
+			// 	label: "Wordle Clone",
+			// 	description: "A clone of the popular word puzzle game."
+			// },
+			// {
+			// 	path: "/projects/portfolio-website",
+			// 	label: "Portfolio Website",
+			// 	description: "My personal portfolio website."
+			// },
+			// {
+			// 	path: "/projects/connect-four-calculator",
+			// 	label: "Connect Four for Calculator",
+			// 	description: "A connect four game implemented on a calculator."
+			// },
+			// {
+			// 	path: "/projects/neural-network-rust",
+			// 	label: "Neural Network in Rust",
+			// 	description: "A simple neural network implementation in Rust."
+			// }
+		]
+	},
+	{
+		path: "/blog",
+		label: "Blog",
 		sub: []
 	},
 	{
@@ -53,11 +85,21 @@ export const NavBar = component$<NavBarProps>((props) => {
 		  <div class={[styles.navbar, props.class]}>
 		  {
 			routes.map(route => (
-			  <>
-				<Link href={route.path} class={[styles.item, isActive(route.path) ? styles.active : '']} key={route.path}>
+			  <div class={styles.menuWrapper} key={route.path}>
+				<Link href={route.path} class={[styles.item, isActive(route.path) ? styles.active : '']}>
 				  {route.label}
 				</Link>
-			  </>
+				<div class={route.sub.length > 0 ? styles.submenu : ''}>
+					{
+						route.sub.map(sub => (
+							<Link href={sub.path} class={[styles.subitem, isActive(sub.path) ? styles.active : '']} key={sub.path}>
+								{sub.label}
+								{sub.description && <span class={styles.description}>{sub.description}</span>}
+							</Link>
+						))
+					}
+				</div>
+			  </div>
 			))
 		  }
 		</div>

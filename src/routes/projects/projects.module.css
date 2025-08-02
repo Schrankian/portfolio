@@ -1,0 +1,26 @@
+.container {
+	width: var(--content-width);
+}
+
+.projectRow {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 3rem;
+	gap: 2rem;
+}
+
+.projectRow:nth-child(odd) {
+	flex-direction: row-reverse;
+}
+
+.projectImage {
+	flex: 0 0 20%;
+	background-color: #e0e0e0;
+	height: 160px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	color: #777;
+	border-radius: 8px;
+}

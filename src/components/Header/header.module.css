@@ -13,9 +13,10 @@
 	transition: border-color 0.5s ease;
 }
 
-.container-scrolled {
+.containerScrolled {
 	border-bottom: 1px solid var(--color-border);
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 2px 4px var(--color-shadow);
 }
 
 .content {
@@ -39,9 +40,10 @@
 	border-radius: 9999px;
 	transition: background 0.5s ease;
 	backdrop-filter: blur(10px);
+	position: relative;
 }
 
-.navbar-scrolled {
+.navbarScrolled {
 	border: none;
 	background: transparent;
 	backdrop-filter: none;
@@ -53,7 +55,6 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0 1rem;
-	position: relative;
 	color: var(--color-text);
 }
 
@@ -90,4 +91,81 @@
 			transparent);
 	border-radius: 2px;
 	pointer-events: none;
+}
+
+/* Submenu base style */
+.menuWrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.submenu {
+	display: none;
+	position: absolute;
+	top: 200%;
+	left: 50%;
+	transform: translate(-50%, -5%);
+	opacity: 0;
+	transition: opacity 0.25s ease, transform 0.25s ease, display 0.25s ease;
+	transition-behavior: allow-discrete;
+	transition-delay: 400ms;
+	background: var(--color-bg);
+	border-radius: var(--border-radius);
+	border: 1px solid var(--color-border);
+	box-shadow: 0 8px 16px var(--color-shadow);
+	min-width: 30vw;
+	padding: 0.75rem 1rem;
+	z-index: 1000;
+}
+
+.menuWrapper:hover .submenu {
+	display: block;
+	opacity: 1;
+	transform: translate(-50%, 0);
+	transition-delay: 0s;
+
+	@starting-style {
+		opacity: 0;
+		transform: translate(-50%, -10%);
+	}
+}
+
+.submenu .subitem {
+	display: block;
+	padding: 0.5rem 0;
+	color: var(--color-text);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.markdownInfo {
+	width: 70%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.markdownInfo p {
+	margin: 0;
+	font-size: 0.9rem;
+}
+
+.markdownInfo h5 {
+	margin: 0
+}
+
+.markdownInfo .left {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+}
+
+.markdownInfo .right {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: center;
 }

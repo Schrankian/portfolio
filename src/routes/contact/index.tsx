@@ -1,4 +1,5 @@
 import { component$ } from '@builder.io/qwik';
+import { DocumentHead } from '@builder.io/qwik-city';
 import { SocialLinks } from '~/components/SocialLinks';
 
 const Form = component$(() => {
@@ -33,3 +34,7 @@ export default component$(() => {
     </div>
   );
 });
+
+export const head: DocumentHead = {
+  title: 'Contact',
+}

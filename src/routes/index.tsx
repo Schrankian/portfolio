@@ -3,6 +3,7 @@ import styles from './home.module.css'
 import { GoChevronDown24 } from '@qwikest/icons/octicons';
 import ImageAvatar from '~/assets/images/avatar.png?w=300&h=300&jsx';
 import { SocialLinks } from '~/components/SocialLinks';
+import { DocumentHead } from '@builder.io/qwik-city';
 
 export default component$(() => {
   const scrollDown = $(() => {
@@ -39,3 +40,13 @@ export default component$(() => {
     </>
   );
 });
+
+export const head: DocumentHead = {
+	title: "Fabian Schuster",
+  meta: [
+    {
+      name: "description",
+      content: "This is my personal portfolio built with care."
+    }
+  ]
+};
