@@ -1,4 +1,5 @@
-import { useContent } from "@builder.io/qwik-city";
+import menuData from "~/assets/data/menu.json";
+import z from "zod";
 
 interface MenuItem {
 	title: string;
@@ -6,68 +7,32 @@ interface MenuItem {
 	author: string;
 	date: Date;
 	link: string;
+	blogLayout: boolean;
 }
 
-interface MenuGroup {
-	type: "group";
-	items: Record<string, MenuNode>;
-}
-
-interface MenuLeaf {
-	type: "leaf";
+type MenuNode = {
 	items: MenuItem[];
-}
+} & {
+	[K in Exclude<string, "items">]?: MenuNode | undefined;
+};
 
-type MenuNode = MenuGroup | MenuLeaf;
-
-interface ItemsObject {
-	text: string;
-	items?: ItemsObject[];
-	href?: string;
-}
-
-function addItems(items: ItemsObject[]): MenuNode {
-	const isLeaf = items.every(item =>
-		item.items?.every(sub => sub.items === undefined)
-	);
-
-	if (isLeaf) {
-		return {
-			type: "leaf",
-			items: items.map(item => ({
-				title: item.items?.[0]?.text || "",
-				link: item.items?.[0]?.href || "",
-				description: item.items?.[1]?.text || "",
-				author: item.items?.[2]?.text || "",
-				date: new Date(item.items?.[3]?.text || "")
-			}))
-		};
-	} else {
-		const groups: Record<string, MenuNode> = {};
-		for (const item of items) {
-			groups[item.text] = addItems(item.items || []);
-		}
-		return { type: "group", items: groups };
-	}
-}
+const MenuNodeSchema: z.ZodType<MenuNode> = z.lazy(() =>
+	z.object({
+		items: z.array(z.object({
+			title: z.string(),
+			description: z.string(),
+			author: z.string(),
+			date: z.coerce.date(),
+			link: z.string(),
+			blogLayout: z.boolean()
+		})),
+	}).catchall(MenuNodeSchema.optional())
+);
 
 /**
- * Get the menu structure.
- * > Must be called within a Qwik component!
+ * Get the typed menu structure, generated at compile time.
  * @returns A record of menu nodes keyed by their names.
  */
-export function useMenu(): Record<string, MenuNode> {
-	const { menu } = useContent();
-
-	if (!menu || menu.text !== "Root" || !menu.items) {
-		return {};
-	}
-
-	const rootNode = addItems(menu.items);
-
-	if (rootNode.type !== "group") {
-		throw new Error("There was an error parsing the menu structure. It had no top-level group.");
-	}
-	
-	return rootNode.items;
+export function getMenu(): MenuNode{
+	return MenuNodeSchema.parse(menuData);
 }

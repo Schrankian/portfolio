@@ -1,14 +1,11 @@
 import { component$} from "@builder.io/qwik";
 import { DocumentHead, Link } from "@builder.io/qwik-city";
-import { useMenu } from "~/utils/parse_menu";
+import { getMenu } from "~/utils/parse_menu";
 import styles from "./blog.module.css"
 
 export default component$(() => {
-	const {blog} = useMenu();
-
-	if (!blog || blog.type !== "leaf") {
-		throw new Error("Blog menu not found");
-	}
+	const menu = getMenu();
+	const blogEntries = menu.blog?.items || [];
 
 	return (
 		<div class="w-content">
@@ -20,7 +17,7 @@ export default component$(() => {
 				Stay tuned for updates and feel free to reach out if you have any questions or suggestions!
 			</p>
 			{
-				blog.items.map(item => (
+				blogEntries.map(item => (
 					<Link href={item.link} key={item.link} class={styles.linkCard}>
 						<h2>{item.title}</h2>
 						<p class="text-text">{item.description}</p>

@@ -1,0 +1,59 @@
+{
+  "items": [],
+  "blog": {
+    "items": [
+      {
+        "title": "Kerberos",
+        "description": "Or how to survive the Windows ecosystem.",
+        "author": "Fabian Schuster",
+        "date": "2025-08-02T00:00:00.000Z",
+        "link": "blog/kerberos/index.mdx",
+        "blogLayout": true
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "Campus Dual App",
+        "description": "A mobile app for students of the Duale Hochschule Sachsen",
+        "author": "Fabian Schuster",
+        "date": null,
+        "link": "projects/campus-dual-app/index.mdx",
+        "blogLayout": true
+      },
+      {
+        "title": "Connect Four Calculator",
+        "description": "A Connect Four game implemented on a calculator.",
+        "author": "Fabian Schuster",
+        "date": null,
+        "link": "projects/connect-four-calculator/index.mdx",
+        "blogLayout": true
+      },
+      {
+        "title": "Neuronal Network in Rust",
+        "description": "A simple neural network implementation in Rust.",
+        "author": "Fabian Schuster",
+        "date": null,
+        "link": "projects/neural-network-rust/index.mdx",
+        "blogLayout": true
+      },
+      {
+        "title": "Portfolio Website",
+        "description": "My personal portfolio website.",
+        "author": "Fabian Schuster",
+        "date": null,
+        "link": "projects/portfolio-website/index.mdx",
+        "blogLayout": true
+      },
+      {
+        "title": "Wordle Clone",
+        "description": "A clone of the popular word puzzle game.",
+        "author": "Fabian Schuster",
+        "date": null,
+        "link": "projects/wordle-clone/index.mdx",
+        "blogLayout": true
+      }
+    ]
+  }
+}

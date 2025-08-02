@@ -23,7 +23,7 @@
     "serve": "wrangler pages dev ./dist --compatibility-flags=nodejs_als",
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
-    "generate:menu": "bun scripts/generate_menu.ts > src/routes/menu.md"
+    "generate:menu": "bun scripts/generate_menu.ts src/assets/data/menu.json"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.15.0",
@@ -43,5 +43,7 @@
     "vite-tsconfig-paths": "^4.2.1",
     "wrangler": "4.26.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "fast-xml-parser": "^5.2.5"
+  }
 }
