@@ -167,6 +167,15 @@ a {
 	transition: color 0.2s ease;
 }
 
+/*  External links */
+a[href^="http"]:not([href*="fabianschuster.net"])::after {
+	content: "🡕";
+	margin-left: 0.25em;
+	color: var(--color-primary-light);
+	font-weight: 400;
+	font-size: 0.95em;
+}
+
 a:focus,
 a:hover {
 	color: var(--color-primary-light);

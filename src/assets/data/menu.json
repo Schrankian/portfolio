@@ -7,7 +7,7 @@
         "description": "Or how to survive the Windows ecosystem.",
         "author": "Fabian Schuster",
         "date": "2025-08-02T00:00:00.000Z",
-        "link": "blog/kerberos/index.mdx",
+        "link": "blog/kerberos",
         "blogLayout": true
       }
     ]
@@ -19,7 +19,7 @@
         "description": "A mobile app for students of the Duale Hochschule Sachsen",
         "author": "Fabian Schuster",
         "date": null,
-        "link": "projects/campus-dual-app/index.mdx",
+        "link": "projects/campus-dual-app",
         "blogLayout": true
       },
       {
@@ -27,7 +27,7 @@
         "description": "A Connect Four game implemented on a calculator.",
         "author": "Fabian Schuster",
         "date": null,
-        "link": "projects/connect-four-calculator/index.mdx",
+        "link": "projects/connect-four-calculator",
         "blogLayout": true
       },
       {
@@ -35,7 +35,7 @@
         "description": "A simple neural network implementation in Rust.",
         "author": "Fabian Schuster",
         "date": null,
-        "link": "projects/neural-network-rust/index.mdx",
+        "link": "projects/neural-network-rust",
         "blogLayout": true
       },
       {
@@ -43,7 +43,7 @@
         "description": "My personal portfolio website.",
         "author": "Fabian Schuster",
         "date": null,
-        "link": "projects/portfolio-website/index.mdx",
+        "link": "projects/portfolio-website",
         "blogLayout": true
       },
       {
@@ -51,7 +51,7 @@
         "description": "A clone of the popular word puzzle game.",
         "author": "Fabian Schuster",
         "date": null,
-        "link": "projects/wordle-clone/index.mdx",
+        "link": "projects/wordle-clone",
         "blogLayout": true
       }
     ]

@@ -2,6 +2,7 @@
 title: Campus Dual App
 description: A mobile app for students of the Duale Hochschule Sachsen
 author: Fabian Schuster
+date: 2025-08-05
 showInHeader: true
 mdxLayout: true
 ---
@@ -9,4 +10,36 @@ import { MDXHeader } from '~/components/MDXHeader';
 
 <MDXHeader />
 
-TODO
+This app was a personal project to provide an alternative interface for myself and other students of the Duale Hochschule Sachsen to access their data.
+I was quite dissatisfied with the official web app being the only way to access grades, schedules and other important information. There were some other,
+inofficial apps, but they were either not maintained or lacked important features. And I wanted to have a configurable timetable, where I could color or hide
+certain courses. Additionally, I wanted to have a quick overview of my grades, upcoming exams and average calculation. But most importantly, I wanted to have
+offline access as well as credential caching, so I could access my data without needing to log in every time. All of this led to the development of this app.
+
+// TODO add callout component
+>// To be honest, I didn't put as much effort into this app as I could have. It was originally intended as a personal project, however my friends requested to
+use it as well, so I decided to publish it to the Play Store. I never intended to maintain it long-term, particuarly since I won't be a student at the Duale 
+Hochschule Sachsen for much longer. However I still want to keep it available for those who find it useful and I am happy to pass it on to someone else who
+wants to maintain it in the future.
+
+## Technologies Used
+- Flutter (the main framework for building the app)
+- Dart (used by Flutter)  
+- Android tools (for building and signing APKs)  
+- Kotlin (for writing the Widget)
+
+## Noteworthy Features
+- Scrapes and parses data from the Campus Dual website, sometimes impersonating the user to fetch information  
+- APK releases for easy installation as well as automatic publishing to the Google Play Store
+- Offline-first approach with credential caching
+- Timetable as a widget
+
+## Personal Insights
+...
+
+## Other Ideas
+- **Maintainer Call:** The project is seeking a new maintainer as my access to campus dual may be limited in the future.  
+- **Edge Case Warning:** The app relies heavily on scraping, which can be brittle and may not cover all scenarios. Users should be aware of potential issues.  
+- **Logging:** Due to the scraping nature, it would be beneficial to implement logging to help diagnose issues. 
+- **Platform Expansion:** Consider future support for other platforms, such as iOS or web.  
+- **Refactoring:** The current codebase works, but it could benefit from refactoring to improve maintainability and readability. For example, migrating to Riverpod for state management and using more idiomatic Dart/Flutter practices.

@@ -18,7 +18,7 @@ export default component$(() => {
 			</p>
 			{
 				blogEntries.map(item => (
-					<Link href={item.link} key={item.link} class={styles.linkCard}>
+					<Link href={`/${item.link}`} key={item.link} class={styles.linkCard}>
 						<h2>{item.title}</h2>
 						<p class="text-text">{item.description}</p>
 						<p>

@@ -64,7 +64,7 @@ function parseFrontmatter(content: string): Record<string, string> {
  */
 function addToTree(tree: MenuNode, pathParts: string[], meta: Record<string, string>, relativePath: string) {
 	// If there are only two parts left, it's a leaf node as its in the format: "name/index.mdx"
-	if (pathParts.length === 2) {
+	if (pathParts.length === 1) {
 		tree.items.push({
 			title: meta.title || "Untitled",
 			description: meta.description || "",
@@ -97,7 +97,7 @@ function buildMenu(): MenuNode {
 	const tree: MenuNode = { items: [] };
 
 	for (const file of files) {
-		const rel = relative(ROOT_DIR, file).replace(/\\\\?/g, "/");
+		const rel = relative(ROOT_DIR, file).replace(/\\\\?/g, "/").replace("/index.mdx", "");
 		const parts = rel.split("/");
 		const content = readFileSync(file, "utf-8");
 		const meta = parseFrontmatter(content);
