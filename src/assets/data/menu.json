@@ -18,7 +18,7 @@
         "title": "Campus Dual App",
         "description": "A mobile app for students of the Duale Hochschule Sachsen",
         "author": "Fabian Schuster",
-        "date": null,
+        "date": "2025-08-05T00:00:00.000Z",
         "link": "projects/campus-dual-app",
         "blogLayout": true
       },
@@ -44,14 +44,6 @@
         "author": "Fabian Schuster",
         "date": null,
         "link": "projects/portfolio-website",
-        "blogLayout": true
-      },
-      {
-        "title": "Wordle Clone",
-        "description": "A clone of the popular word puzzle game.",
-        "author": "Fabian Schuster",
-        "date": null,
-        "link": "projects/wordle-clone",
         "blogLayout": true
       }
     ]
