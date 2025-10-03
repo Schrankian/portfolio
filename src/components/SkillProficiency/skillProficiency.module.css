@@ -1,0 +1,38 @@
+.container {
+	background: var(--color-bg-grey);
+	padding: 0.2rem 0.8rem;
+	border-radius: 9999px;
+}
+
+.container.godlike {
+	background: linear-gradient(45deg, #ffd700, #fffbe6, #ffd700, #fffbe6, #ffd700, #fffbe6);
+	background-size: 200% 200%;
+	animation: shine 3s linear infinite;
+	box-shadow: 0 0 16px 2px #ffd70080;
+	color: var(--color-on-success);
+}
+
+@keyframes shine {
+	0% {
+		background-position: 200% 200%;
+	}
+
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+.container.good {
+	background: var(--color-success);
+	color: var(--color-on-success);
+}
+
+.container.ok {
+	background: var(--color-warning);
+	color: var(--color-on-warning);
+}
+
+.container.bad {
+	background: var(--color-danger);
+	color: var(--color-on-danger);
+}

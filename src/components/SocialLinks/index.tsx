@@ -40,7 +40,7 @@ export const SocialLinks = component$(() => {
         <Tooltip text={social.name} key={social.name}>
           <IconButton
             href={social.url}
-            class={`${social.class} hover-shadow`}
+            class={`${social.class}`}
             ariaLabel={`Link to ${social.name}`}
           >
             <social.iconLight alt={social.alt} q:slot="icon-light" />

@@ -44,6 +44,8 @@
     "wrangler": "4.26.0"
   },
   "dependencies": {
-    "fast-xml-parser": "^5.2.5"
+    "fast-xml-parser": "^5.2.5",
+    "playwright": "^1.54.2",
+    "rehype-mermaid": "^3.0.0"
   }
 }

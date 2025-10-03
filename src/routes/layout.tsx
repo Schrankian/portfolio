@@ -3,7 +3,7 @@ import { SettingsProvider } from '~/components/SettingsProvider';
 import { Header } from '~/components/Header';
 import { Footer } from '~/components/Footer';
 import { BackgroundCanvas } from '~/components/BackgroundCanvas';
-import { useDocumentHead } from '@builder.io/qwik-city';
+import { DocumentHead, useDocumentHead } from '@builder.io/qwik-city';
 
 // ----------------------------------------------------------------
 // Root Layout Component
@@ -17,7 +17,7 @@ export default component$(() => {
 		<SettingsProvider>
 			<div class="min-h-screen col"> {/* Allow the children to position themselves in the viewport*/}
 				<Header />
-				<BackgroundCanvas class="col cross-axis-center pt-5 pb-5 relative" points={70} maxPoints={150}>
+				<BackgroundCanvas class="col cross-axis-center pt-5 pb-5 relative" points={200} maxPoints={300}>
 					{
 						frontmatter?.mdxLayout ? 
 						<div class={frontmatter?.class ?? 'defaultMDX'}>

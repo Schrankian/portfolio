@@ -12,7 +12,7 @@ export interface IconButtonProps {
 export const IconButton = component$<IconButtonProps>((props) => {
   const { darkMode } = useContext(SettingsContext); 
   return (
-    <a aria-label={props.ariaLabel} href={props.href} target='_blank' class={[props.class, !props.noDefaultStyle && styles.icon]} rel="noopener noreferrer">
+    <a aria-label={props.ariaLabel} href={props.href} target='_blank' class={[props.class, !props.noDefaultStyle && styles.icon]} rel="noopener noreferrer" data-iconButton={true}>
       <Slot />
       {
         darkMode ? 

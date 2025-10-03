@@ -35,7 +35,7 @@ export default component$(() => {
         <GoChevronDown24 onClick$={scrollDown} class={styles.chevron} />
       </div>
       <div class={styles.content}>
-        content
+        I'm still deciding what to put here :D
       </div>
     </>
   );

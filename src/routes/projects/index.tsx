@@ -1,6 +1,9 @@
 import { component$, Slot } from '@builder.io/qwik';
 import styles from './projects.module.css';
 import { Link } from '@builder.io/qwik-city';
+import Connect4Image from '~/assets/images/projects/connect4.jpeg?jsx';
+import PortfolioImage from '~/assets/images/projects/portfolio.png?jsx';
+import CampusDualAppImage from '~/assets/images/projects/campus_dual_app.jpg?jsx';
 
 interface ProjectCardProps {
   title: string;
@@ -11,7 +14,9 @@ interface ProjectCardProps {
 const ProjectCard = component$<ProjectCardProps>(({ title, internalLink, externalLink }) => {
   return (
     <div class={styles.projectRow}>
-      <div class={styles.projectImage}>Image</div>
+      <div class={styles.projectImage}>
+        <Slot name='image'/>
+      </div>
       <div class={styles.projectCard}>
         <h2>{title}</h2>
         <p>
@@ -42,6 +47,7 @@ export default component$(() => {
         elegant fashion. I also added some qol features like credential caching and offline viewing.
         This app doesn't require any external server (beside the university-server) to work as it saves
         all data locally.
+        <CampusDualAppImage q:slot='image' alt="Campus Dual App Screenshot" class={styles.vertical}/>
       </ProjectCard>
 
       {/* <ProjectCard title="Wordle Clone" internalLink="/projects/wordle-clone">
@@ -53,6 +59,7 @@ export default component$(() => {
       <ProjectCard title="Portfolio Website" internalLink="/projects/portfolio-website" externalLink="https://github.com/schrankian/portfolio">
         This is the website you are currently looking at. It showcases my projects and skills as a developer.
         The website is built using Qwik, a modern framework for building fast and efficient web applications.
+        <PortfolioImage q:slot='image' alt="Portfolio Website Screenshot"/>
       </ProjectCard>
 
       <ProjectCard title="Connect Four for Calculator" internalLink="/projects/connect-four-calculator" externalLink="https://github.com/schrankian/connect-four">
@@ -62,6 +69,7 @@ export default component$(() => {
         That's why I decided to use the advanced Casio SDK for my project (which wasn't easy to find and understand).
         Another unfortunate thing was, that I had to code it in C, which I never used before, so I had to learn it.
         As this was my first project, the code isn't very organized but it worked which is pretty awesome.
+        <Connect4Image q:slot='image' alt="Connect Four on Casio Calculator"/>
       </ProjectCard>
 
       <ProjectCard title="Neural Network in Rust" internalLink="/projects/neural-network-rust" externalLink="https://github.com/schrankian/learn-ml">
