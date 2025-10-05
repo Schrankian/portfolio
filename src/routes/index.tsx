@@ -20,14 +20,16 @@ export default component$(() => {
           <div class={styles.left}>
             <h1 class={styles.title}>
               Hey, I'm <span class="text-primary">Fabian</span> <br />
-              A Full Stack {"<Developer />"}
+              A Full Stack &lt;Developer&nbsp;/&gt;
             </h1>
             <p class={styles.description}>
               With a love for creating everything that comes to mind.
             </p>
             <SocialLinks />
           </div>
-          <ImageAvatar alt='Large user avatar' class="rounded-full"/>
+          <div class={styles.right}>
+            <ImageAvatar alt='Large user avatar' class={["rounded-full", styles.avatar]} />
+          </div>
         </div>
         <div class={styles.quote}>
             "The only way to do great work is to love what you do." - Steve Jobs

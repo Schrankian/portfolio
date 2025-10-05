@@ -26,8 +26,8 @@ export default component$(() => {
   return (
     <div class={styles.container}>
       <h1>About Me</h1>
-      <div class="row">
-        <div class="w-2/3">
+      <div class={styles.aboutContainer}>
+        <div class={styles.left}>
           <p>
             Hey there! I'm Fabian Schuster, a {age.value} year old software developer from Germany. Currently, I'm
             pursuing a dual study program in computer science, combining theoretical knowledge with actual work
@@ -52,7 +52,7 @@ export default component$(() => {
             <Link href="/contact"> reach out.</Link>
           </p>
         </div>
-        <div class="w-1/3 col main-axis-center cross-axis-center">
+        <div class={styles.right}>
           Thats me
         </div>
       </div>
@@ -71,17 +71,19 @@ export default component$(() => {
           Object.entries(skills).map(([category, skillSet]) => (
             <div key={category} class={styles.skillCategory}>
               <h3>{category}</h3>
-              {
-                Object.entries(skillSet).map(([skillName, skillData]) => (
-                  <SkillProficiency
-                    key={skillName}
-                    name={skillName}
-                    current_score={skillData.score}
-                    current_timestamp={skillDate}
-                    frequency={skillData.frequency}
-                  />
-                ))
-              }
+              <div>
+                {
+                  Object.entries(skillSet).map(([skillName, skillData]) => (
+                    <SkillProficiency
+                      key={skillName}
+                      name={skillName}
+                      current_score={skillData.score}
+                      current_timestamp={skillDate}
+                      frequency={skillData.frequency}
+                    />
+                  ))
+                }
+              </div>
             </div>
           ))
         }

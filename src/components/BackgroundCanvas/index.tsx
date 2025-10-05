@@ -1,11 +1,10 @@
-import { component$, useSignal, Slot, ClassList, Signal, useOnWindow, $, useOnDocument, useTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useOnWindow, $, useOnDocument, useTask$ } from '@builder.io/qwik';
 import styles from './backgroundCanvas.module.css';
 
 export interface BackgroundCanvasProps {
   /**
    * Specify css classes for the child of the BackgroundCanvas.
    */
-  class?: ClassList | Signal<ClassList>;
   points?: number;
   maxPoints?: number;
   distanceThreshold?: number;
@@ -18,8 +17,8 @@ export const BackgroundCanvas = component$<BackgroundCanvasProps>((props) => {
   const pointList = useSignal<{ x: number; y: number; vx: number; vy: number }[]>([]);
 
   const POINT_COUNT = props.points ?? 60;
-  const DIST_THRESHOLD = props.distanceThreshold ?? 150;
   const MAX_POINTS = props.maxPoints ?? 100;
+  const DIST_THRESHOLD = props.distanceThreshold ?? 150;
 
   useOnDocument(
     'click',
@@ -57,7 +56,7 @@ export const BackgroundCanvas = component$<BackgroundCanvasProps>((props) => {
 
     const width = windowWidth.value;
     const height = windowHeight.value;
-    if (!width || !height)  return;
+    if (!width || !height) return;
 
     const canvas = canvasRef.value;
     if (!canvas) return;
@@ -132,11 +131,6 @@ export const BackgroundCanvas = component$<BackgroundCanvasProps>((props) => {
   });
 
   return (
-    <>
-      <canvas ref={canvasRef} class={styles.canvas} />
-      <div class={props.class}>
-        <Slot />
-      </div>
-    </>
+    <canvas ref={canvasRef} class={styles.canvas} />
   );
 });

@@ -4,6 +4,7 @@ import { RouterHead } from "./components/RouterHead";
 import { RestoreColorScheme } from "./components/DarkModeToggle";
 
 import "./global.css";
+import { SettingsProvider } from "./components/SettingsProvider";
 
 export default component$(() => {
   /**
@@ -29,7 +30,9 @@ export default component$(() => {
         <RouterHead />
       </head>
       <body lang="en">
-        <RouterOutlet />
+        <SettingsProvider>
+          <RouterOutlet />
+        </SettingsProvider>
       </body>
     </QwikCityProvider>
   );

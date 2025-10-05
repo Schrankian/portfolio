@@ -1,9 +1,11 @@
 * {
-	--top-height: calc(70px + 2rem); /* 70px for header, 2rem for top padding */
+	--top-height: calc(70px + 2rem);
+	/* 70px for header, 2rem for top padding */
 }
 
 .main {
-	height: calc(100vh - var(--top-height)); /* Try to fill the remaining space after header*/
+	height: calc(100vh - var(--top-height));
+	/* Try to fill the remaining space after header*/
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -15,22 +17,41 @@
 
 .box {
 	height: 60%;
-	/* width: var(--content-width); */
-	width: 50%; /* TODO breakpoints */
+	width: var(--content-width);
+	/* Just in case someone with an ultra wide screen comes along */
+	max-width: 1000px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	translate: 0 calc(-1 * var(--top-height) / 2); /* Center the box vertically on the viewport. TODO refactor*/
+	translate: 0 calc(-1 * var(--top-height) / 2);
+	/* Center the box vertically on the viewport. TODO refactor*/
 }
 
 .box .left {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 }
 
-.links {
+.box .right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
+.links {}
+
+.avatar {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.avatar {
+		display: block;
+	}
 }
 
 .chevron {
@@ -40,6 +61,7 @@
 	width: auto;
 	cursor: pointer;
 	animation: chevron-bounce 1s infinite;
+	-webkit-tap-highlight-color: transparent;
 }
 
 @keyframes chevron-bounce {

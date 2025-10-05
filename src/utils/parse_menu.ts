@@ -10,7 +10,7 @@ interface MenuItem {
 	blogLayout: boolean;
 }
 
-type MenuNode = {
+export type MenuNode = {
 	items: MenuItem[];
 } & {
 	[K in Exclude<string, "items">]?: MenuNode | undefined;
