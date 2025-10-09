@@ -15,7 +15,7 @@ const ProjectCard = component$<ProjectCardProps>(({ title, internalLink, externa
   return (
     <div class={styles.projectRow}>
       <div class={styles.projectImage}>
-        <Slot name='image'/>
+        <Slot name='image' />
       </div>
       <div class={styles.projectCard}>
         <h2>{title}</h2>
@@ -23,8 +23,8 @@ const ProjectCard = component$<ProjectCardProps>(({ title, internalLink, externa
           <Slot />
         </p>
         <div class="row gap-5">
-          <Link href={internalLink}>View write-up</Link>
-          {externalLink && <a href={externalLink} target="_blank">View source</a>}
+          <Link href={internalLink}>{$localize`View write-up`}</Link>
+          {externalLink && <a href={externalLink} target="_blank">{$localize`View source`}</a>}
         </div>
       </div>
     </div>
@@ -34,20 +34,22 @@ const ProjectCard = component$<ProjectCardProps>(({ title, internalLink, externa
 export default component$(() => {
   return (
     <div class={styles.container}>
-      <h1>My Projects</h1>
+      <h1>{$localize`My Projects`}</h1>
       <p>
-        Below are a few personal projects I've developed in my free time, outside of professional or academic work
+        {$localize`Below are a few personal projects I've developed in my free time, outside of professional or academic work`}
       </p>
       <div class="divider-horizontal mb-5" />
 
       <ProjectCard title="Campus Dual App" internalLink="/projects/campus-dual-app" externalLink="https://github.com/schrankian/campus-dual-app">
-        The management portal of my university was not very nice to work with and had no mobile app.
-        So I decided to code my own, which uses a combination of publicly available api endpoints
-        and scraping the rendered html documents to get all the data I want and display them in an
-        elegant fashion. I also added some qol features like credential caching and offline viewing.
-        This app doesn't require any external server (beside the university-server) to work as it saves
-        all data locally.
-        <CampusDualAppImage q:slot='image' alt="Campus Dual App Screenshot" class={styles.vertical}/>
+        {$localize`
+          The management portal of my university was not very nice to work with and had no mobile app.
+          So I decided to code my own, which uses a combination of publicly available api endpoints
+          and scraping the rendered html documents to get all the data I want and display them in an
+          elegant fashion. I also added some qol features like credential caching and offline viewing.
+          This app doesn't require any external server (beside the university-server) to work as it saves
+          all data locally.
+        `}
+        <CampusDualAppImage q:slot='image' alt="Campus Dual App Screenshot" class={styles.vertical} />
       </ProjectCard>
 
       {/* <ProjectCard title="Wordle Clone" internalLink="/projects/wordle-clone">
@@ -57,27 +59,33 @@ export default component$(() => {
       </ProjectCard> */}
 
       <ProjectCard title="Portfolio Website" internalLink="/projects/portfolio-website" externalLink="https://github.com/schrankian/portfolio">
-        This is the website you are currently looking at. It showcases my projects and skills as a developer.
-        The website is built using Qwik, a modern framework for building fast and efficient web applications.
-        <PortfolioImage q:slot='image' alt="Portfolio Website Screenshot"/>
+        {$localize`
+          This is the website you are currently looking at. It showcases my projects and skills as a developer.
+          The website is built using Qwik, a modern framework for building fast and efficient web applications.
+        `}
+        <PortfolioImage q:slot='image' alt="Portfolio Website Screenshot" />
       </ProjectCard>
 
       <ProjectCard title="Connect Four for Calculator" internalLink="/projects/connect-four-calculator" externalLink="https://github.com/schrankian/connect-four">
-        This is my first ever project which is worth mentioning. It was quite a struggle to code something
-        on a calculator, especially if there are nearly no tutorials. But somehow I got it working.
-        I didn't want to use the programming language inside the Calculator, because it's really simple and full of bugs.
-        That's why I decided to use the advanced Casio SDK for my project (which wasn't easy to find and understand).
-        Another unfortunate thing was, that I had to code it in C, which I never used before, so I had to learn it.
-        As this was my first project, the code isn't very organized but it worked which is pretty awesome.
-        <Connect4Image q:slot='image' alt="Connect Four on Casio Calculator"/>
+        {$localize`
+          This is my first ever project which is worth mentioning. It was quite a struggle to code something
+          on a calculator, especially if there are nearly no tutorials. But somehow I got it working.
+          I didn't want to use the programming language inside the Calculator, because it's really simple and full of bugs.
+          That's why I decided to use the advanced Casio SDK for my project (which wasn't easy to find and understand).
+          Another unfortunate thing was, that I had to code it in C, which I never used before, so I had to learn it.
+          As this was my first project, the code isn't very organized but it worked which is pretty awesome.
+        `}
+        <Connect4Image q:slot='image' alt="Connect Four on Casio Calculator" />
       </ProjectCard>
 
       <ProjectCard title="Neural Network in Rust" internalLink="/projects/neural-network-rust" externalLink="https://github.com/schrankian/learn-ml">
-        This project is a very simple and naive implementation of a neural network in Rust. It was a fun
-        way to learn about the basics of neural networks and how they work. The implementation is not optimized
-        and is meant for educational purposes only. But for anyone who wants to understand the basics of neural
-        networks and knows Rust, this is a good starting point. It includes all functionality needed to train
-        a neuronal network based on the MNIST dataset for handwritten digit recognition.
+        {$localize`
+          This project is a very simple and naive implementation of a neural network in Rust. It was a fun
+          way to learn about the basics of neural networks and how they work. The implementation is not optimized
+          and is meant for educational purposes only. But for anyone who wants to understand the basics of neural
+          networks and knows Rust, this is a good starting point. It includes all functionality needed to train
+          a neuronal network based on the MNIST dataset for handwritten digit recognition.
+        `}
       </ProjectCard>
     </div>
   );

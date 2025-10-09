@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "build": "bun generate:menu && qwik build",
-    "build.client": "vite build",
+    "build.client": "vite build && bun run i18n-translate",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
@@ -18,7 +18,11 @@
     "dev.debug": "bun generate:menu && node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
+    "i18n-extract": "node_modules/.bin/localize-extract -s \"dist/build/*.js\" -f json -o src/locales/message-en.json",
+    "i18n-translate": "node_modules/.bin/localize-translate -s \"*.js\" -t src/locales/message-*.json -o dist/build/{{LOCALE}} -r ./dist/build",
+    "translate-deepl": "deepl-localize translate -b src/locales/message-en.json -l de -a $(cat deepl_key.local)",
     "lint": "eslint \"src/**/*.ts*\"",
+    "prei18n-extract": "vite build",
     "preview": "bun generate:menu && qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist --compatibility-flags=nodejs_als",
     "start": "bun generate:menu && vite --open --mode ssr",
@@ -26,6 +30,8 @@
     "generate:menu": "bun scripts/generate_menu.ts src/assets/data/menu.json"
   },
   "devDependencies": {
+    "@angular/compiler": "^16.2.2",
+    "@angular/compiler-cli": "^16.2.2",
     "@builder.io/qwik": "^1.15.0",
     "@builder.io/qwik-city": "^1.15.0",
     "@eslint/js": "latest",
@@ -44,6 +50,8 @@
     "wrangler": "4.26.0"
   },
   "dependencies": {
+    "@angular/localize": "^16.2.2",
+    "deepl-localize": "^3.0.2",
     "fast-xml-parser": "^5.2.5",
     "playwright": "^1.54.2",
     "rehype-mermaid": "^3.0.0"

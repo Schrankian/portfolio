@@ -253,7 +253,9 @@
 	justify-content: start;
 	color: var(--color-text);
 	font-size: 1.5rem;
+	font-weight: 300;
 	gap: 1rem;
+	white-space: nowrap;
 }
 
 .itemMobile.active {

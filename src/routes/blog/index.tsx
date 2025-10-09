@@ -9,12 +9,12 @@ export default component$(() => {
 
 	return (
 		<div class="w-content">
-			<h1>Blog</h1>
+			<h1>{$localize`Blog`}</h1>
 			<p>
-				Welcome to my blog! Here I share my thoughts, experiences, and insights on various topics related to technology, programming, and more.
+				{$localize`Welcome to my blog! Here I share my thoughts, experiences, and insights on various topics related to technology, programming, and more.`}
 			</p>
 			<p>
-				Stay tuned for updates and feel free to reach out if you have any questions or suggestions!
+				{$localize`Stay tuned for updates and feel free to reach out if you have any questions or suggestions!`}
 			</p>
 			{
 				blogEntries.map(item => (

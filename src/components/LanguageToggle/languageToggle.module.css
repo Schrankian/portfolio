@@ -11,15 +11,17 @@
 	background: transparent;
 	border: none;
 	outline: none;
-	padding: 0.5rem;
+	padding: 0.5rem 0.9rem;
 	border-radius: 9999px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
 	color: var(--color-on-muted);
-	transition: all 0.3s ease;
+	transition: all 0.25s ease;
 	box-shadow: none;
+	font-size: 0.9rem;
+	font-weight: 400;
 	user-select: none;
 }
 
@@ -32,5 +34,4 @@
 	color: var(--color-text);
 	box-shadow: 0 4px 7px var(--color-shadow);
 	transform: translateY(-1px);
-	outline: none;
 }

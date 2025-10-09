@@ -5,6 +5,7 @@ import { RestoreColorScheme } from "./components/DarkModeToggle";
 
 import "./global.css";
 import { SettingsProvider } from "./components/SettingsProvider";
+import { useI18n } from "./i18n";
 
 export default component$(() => {
   /**
@@ -13,7 +14,7 @@ export default component$(() => {
    *
    * Don't remove the `<head>` and `<body>` elements.
    */
-
+  useI18n(); // Loads translations into memory in development
   return (
     <QwikCityProvider>
       <head>

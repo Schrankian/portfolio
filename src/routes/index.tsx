@@ -19,11 +19,11 @@ export default component$(() => {
         <div class={styles.box}>
           <div class={styles.left}>
             <h1 class={styles.title}>
-              Hey, I'm <span class="text-primary">Fabian</span> <br />
-              A Full Stack &lt;Developer&nbsp;/&gt;
+              Hey, {$localize`I'm`} <span class="text-primary">Fabian</span> <br />
+              {$localize`A`} Full Stack &lt;{$localize`Developer`}&nbsp;/&gt;
             </h1>
             <p class={styles.description}>
-              With a love for creating everything that comes to mind.
+              {$localize`With a love for creating everything that comes to mind.`}
             </p>
             <SocialLinks />
           </div>
@@ -37,7 +37,7 @@ export default component$(() => {
         <GoChevronDown24 onClick$={scrollDown} class={styles.chevron} />
       </div>
       <div class={styles.content}>
-        I'm still deciding what to put here :D
+        {$localize`I'm still deciding what to put here :D`}
       </div>
     </>
   );
@@ -48,7 +48,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "This is my personal portfolio built with care."
+      content: $localize`This is my personal portfolio built with care.`
     }
   ]
 };

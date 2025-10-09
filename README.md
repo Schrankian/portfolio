@@ -99,3 +99,11 @@ Add additional functionality from the [Qwik Integration Store](https://qwik.dev/
 ```shell
 bun qwik add <name>
 ```
+### Translation
+Currently, one has to do it semi-manually. Inline all strings that should be translated with `$localize\`<some-string>\``.
+After that, simply run:
+
+```shell
+bun run i18n-extract
+bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically translate all strings
+```

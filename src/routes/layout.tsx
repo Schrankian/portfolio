@@ -1,12 +1,17 @@
-import { component$, Slot} from '@builder.io/qwik';
+import { component$, Slot } from '@builder.io/qwik';
 import { Header } from '~/components/Header';
 import { Footer } from '~/components/Footer';
 import { BackgroundCanvas } from '~/components/BackgroundCanvas';
-import { useDocumentHead } from '@builder.io/qwik-city';
+import { RequestHandler, useDocumentHead } from '@builder.io/qwik-city';
+import { extractLang } from "~/i18n";
 
 // ----------------------------------------------------------------
 // Root Layout Component
 // ----------------------------------------------------------------
+
+export const onRequest: RequestHandler = ({ locale, request, url, cookie }) => {
+	locale(extractLang(request, url, cookie));
+};
 
 export default component$(() => {
 	// Contains data if current page is a MDX file

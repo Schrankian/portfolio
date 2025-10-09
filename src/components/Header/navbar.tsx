@@ -17,17 +17,17 @@ export interface Route {
 const getRoutes = (menuData: MenuNode) => [
 	{
 		path: "/",
-		label: "Home",
+		label: $localize`Home`,
 		sub: []
 	},
 	{
 		path: "/about",
-		label: "About",
+		label: $localize`About`,
 		sub: []
 	},
 	{
 		path: "/projects",
-		label: "Projects",
+		label: $localize`Projects`,
 		sub: menuData.projects?.items.map(item => ({
 			path: `/${item.link}`,
 			label: item.title,
@@ -36,7 +36,7 @@ const getRoutes = (menuData: MenuNode) => [
 	},
 	{
 		path: "/blog",
-		label: "Blog",
+		label: $localize`Blog`,
 		sub: menuData.blog?.items.map(item => ({
 			path: `/${item.link}`,
 			label: item.title,
@@ -45,7 +45,7 @@ const getRoutes = (menuData: MenuNode) => [
 	},
 	{
 		path: "/contact",
-		label: "Contact",
+		label: $localize`Contact`,
 		sub: []
 	}
 ]
