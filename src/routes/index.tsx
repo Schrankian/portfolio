@@ -37,7 +37,7 @@ export default component$(() => {
         <GoChevronDown24 onClick$={scrollDown} class={styles.chevron} />
       </div>
       <div class={styles.content}>
-        {$localize`I'm still deciding what to put here :D`}
+        {/* {$localize`I'm still deciding what to put here :D`} */}
       </div>
     </>
   );

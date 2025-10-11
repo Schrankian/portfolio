@@ -1,16 +1,7 @@
 {
   "items": [],
   "blog": {
-    "items": [
-      {
-        "title": "Kerberos",
-        "description": "Or how to survive the Windows ecosystem.",
-        "author": "Fabian Schuster",
-        "date": "2025-08-02T00:00:00.000Z",
-        "link": "blog/kerberos",
-        "blogLayout": true
-      }
-    ]
+    "items": []
   },
   "projects": {
     "items": [
@@ -20,30 +11,6 @@
         "author": "Fabian Schuster",
         "date": "2025-08-05T00:00:00.000Z",
         "link": "projects/campus-dual-app",
-        "blogLayout": true
-      },
-      {
-        "title": "Connect Four Calculator",
-        "description": "A Connect Four game implemented on a calculator.",
-        "author": "Fabian Schuster",
-        "date": null,
-        "link": "projects/connect-four-calculator",
-        "blogLayout": true
-      },
-      {
-        "title": "Neuronal Network in Rust",
-        "description": "A simple neural network implementation in Rust.",
-        "author": "Fabian Schuster",
-        "date": null,
-        "link": "projects/neural-network-rust",
-        "blogLayout": true
-      },
-      {
-        "title": "Portfolio Website",
-        "description": "My personal portfolio website.",
-        "author": "Fabian Schuster",
-        "date": null,
-        "link": "projects/portfolio-website",
         "blogLayout": true
       }
     ]

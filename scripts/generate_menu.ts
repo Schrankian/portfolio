@@ -65,6 +65,7 @@ function parseFrontmatter(content: string): Record<string, string> {
 function addToTree(tree: MenuNode, pathParts: string[], meta: Record<string, string>, relativePath: string) {
 	// If there are only two parts left, it's a leaf node as its in the format: "name/index.mdx"
 	if (pathParts.length === 1) {
+		if (relativePath.split("/").at(-1)?.startsWith("_")) return; // Skip items with titles starting with "_"
 		tree.items.push({
 			title: meta.title || "Untitled",
 			description: meta.description || "",

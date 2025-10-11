@@ -5,8 +5,6 @@ export const skills = {
 	"Languages": {
 		"JavaScript": { score: 90, frequency: Frequency.DAILY },
 		"TypeScript": { score: 90, frequency: Frequency.DAILY },
-		"HTML5": { score: 80, frequency: Frequency.WEEKLY },
-		"CSS3": { score: 80, frequency: Frequency.WEEKLY },
 		"Rust": { score: 80, frequency: Frequency.WEEKLY },
 		"Dart": { score: 70, frequency: Frequency.MONTHLY },
 		"C": { score: 70, frequency: Frequency.MONTHLY },

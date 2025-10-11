@@ -88,6 +88,28 @@ To add a new route:
 bun qwik new /path/to/endpoint
 ```
 
+To add a new mdx page:
+- Manually create a new folder in `src/routes` with an `index.mdx` file inside it. (The name of the folder is the path to the page)
+- Add the following frontmatter to the top of the file:
+```markdown
+---
+title: <some-title>
+description: <some-description>
+author: <some-author>
+date: <some-date (YYYY-MM-DD)>
+showInHeader: true
+mdxLayout: true
+---
+import { MDXHeader } from '~/components/MDXHeader';
+
+<MDXHeader />
+
+<here-goes-the-content>
+```
+
+> Prefix the route with `_` to hide it from the menu.
+
+
 To add a new component:
 ```shell
 bun qwik new --barrel componentName
@@ -107,3 +129,17 @@ After that, simply run:
 bun run i18n-extract
 bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically translate all strings
 ```
+
+# TODOS till publishing
+- [ ] Make sure there are no more TODOs (and all TODO mdx-pages are prefixed with `_`)
+- [ ] Add translations to mdx pages
+- [ ] Make sure the translations sound good
+- [ ] Make sure the website feels functional and responsive on all devices
+- [ ] Change avatar image
+- [ ] Review skill list
+- [ ] Implement ci/cd pipeline
+
+## After publishing
+- [ ] Add more projects
+- [ ] Add blog posts
+- [ ] Implement tests

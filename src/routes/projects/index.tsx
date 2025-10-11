@@ -4,6 +4,8 @@ import { Link } from '@builder.io/qwik-city';
 import Connect4Image from '~/assets/images/projects/connect4.jpeg?jsx';
 import PortfolioImage from '~/assets/images/projects/portfolio.png?jsx';
 import CampusDualAppImage from '~/assets/images/projects/campus_dual_app.jpg?jsx';
+import LearnMLImage from '~/assets/images/projects/learn-ml.png?jsx';
+import { getMenu } from '~/utils/parse_menu';
 
 interface ProjectCardProps {
   title: string;
@@ -23,7 +25,7 @@ const ProjectCard = component$<ProjectCardProps>(({ title, internalLink, externa
           <Slot />
         </p>
         <div class="row gap-5">
-          <Link href={internalLink}>{$localize`View write-up`}</Link>
+          {internalLink && <Link href={internalLink}>{$localize`View write-up`}</Link>}
           {externalLink && <a href={externalLink} target="_blank">{$localize`View source`}</a>}
         </div>
       </div>
@@ -32,6 +34,12 @@ const ProjectCard = component$<ProjectCardProps>(({ title, internalLink, externa
 });
 
 export default component$(() => {
+  const writeUpList = getMenu().projects?.items;
+  const getInternalLink = (title: string) => {
+    const el = writeUpList?.find(item => item.title === title);
+    return el ? `/${el.link}` : undefined;
+  };
+
   return (
     <div class={styles.container}>
       <h1>{$localize`My Projects`}</h1>
@@ -40,7 +48,7 @@ export default component$(() => {
       </p>
       <div class="divider-horizontal mb-5" />
 
-      <ProjectCard title="Campus Dual App" internalLink="/projects/campus-dual-app" externalLink="https://github.com/schrankian/campus-dual-app">
+      <ProjectCard title="Campus Dual App" internalLink={getInternalLink("Campus Dual App")} externalLink="https://github.com/schrankian/campus-dual-app">
         {$localize`
           The management portal of my university was not very nice to work with and had no mobile app.
           So I decided to code my own, which uses a combination of publicly available api endpoints
@@ -58,7 +66,7 @@ export default component$(() => {
         bit of experience which helped me a lot while coding it.
       </ProjectCard> */}
 
-      <ProjectCard title="Portfolio Website" internalLink="/projects/portfolio-website" externalLink="https://github.com/schrankian/portfolio">
+      <ProjectCard title="Portfolio Website" internalLink={getInternalLink("Portfolio Website")} externalLink="https://github.com/schrankian/portfolio">
         {$localize`
           This is the website you are currently looking at. It showcases my projects and skills as a developer.
           The website is built using Qwik, a modern framework for building fast and efficient web applications.
@@ -66,7 +74,7 @@ export default component$(() => {
         <PortfolioImage q:slot='image' alt="Portfolio Website Screenshot" />
       </ProjectCard>
 
-      <ProjectCard title="Connect Four for Calculator" internalLink="/projects/connect-four-calculator" externalLink="https://github.com/schrankian/connect-four">
+      <ProjectCard title="Connect Four for Calculator" internalLink={getInternalLink("Connect Four for Calculator")} externalLink="https://github.com/schrankian/connect-four">
         {$localize`
           This is my first ever project which is worth mentioning. It was quite a struggle to code something
           on a calculator, especially if there are nearly no tutorials. But somehow I got it working.
@@ -78,14 +86,15 @@ export default component$(() => {
         <Connect4Image q:slot='image' alt="Connect Four on Casio Calculator" />
       </ProjectCard>
 
-      <ProjectCard title="Neural Network in Rust" internalLink="/projects/neural-network-rust" externalLink="https://github.com/schrankian/learn-ml">
+      <ProjectCard title="Neural Network in Rust" internalLink={getInternalLink("Neural Network in Rust")} externalLink="https://github.com/schrankian/learn-ml">
         {$localize`
           This project is a very simple and naive implementation of a neural network in Rust. It was a fun
           way to learn about the basics of neural networks and how they work. The implementation is not optimized
           and is meant for educational purposes only. But for anyone who wants to understand the basics of neural
           networks and knows Rust, this is a good starting point. It includes all functionality needed to train
-          a neuronal network based on the MNIST dataset for handwritten digit recognition.
+          a neural network based on the MNIST dataset for handwritten digit recognition.
         `}
+        <LearnMLImage q:slot='image' alt="Learn ML with Rust Screenshot" class={styles.vertical} />
       </ProjectCard>
     </div>
   );

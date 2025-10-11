@@ -34,6 +34,7 @@
     "Stay tuned for updates and feel free to reach out if you have any questions or suggestions!": "Bleiben Sie auf dem Laufenden und wenden Sie sich an uns, wenn Sie Fragen oder Anregungen haben!",
     "Enter your Name": "Geben Sie Ihren Namen ein",
     "Enter your Email Address": "Geben Sie Ihre E-Mail Adresse ein",
-    "Enter your Message": "Geben Sie Ihre Nachricht ein"
+    "Enter your Message": "Geben Sie Ihre Nachricht ein",
+    "\n          This project is a very simple and naive implementation of a neural network in Rust. It was a fun\n          way to learn about the basics of neural networks and how they work. The implementation is not optimized\n          and is meant for educational purposes only. But for anyone who wants to understand the basics of neural\n          networks and knows Rust, this is a good starting point. It includes all functionality needed to train\n          a neural network based on the MNIST dataset for handwritten digit recognition.\n        ": "\n          Dieses Projekt ist eine sehr einfache und naive Implementierung eines neuronalen Netzes in Rust. Es war eine unterhaltsame\n          über die Grundlagen neuronaler Netze und deren Funktionsweise zu lernen. Die Implementierung ist nicht optimiert\n          und ist nur für Lehrzwecke gedacht. Aber für jeden, der die Grundlagen von neuronalen Netzen verstehen will und Rust\n          Neuronale Netze verstehen will und Rust kennt, ist dies ein guter Ausgangspunkt. Sie enthält alle Funktionen, die zum Trainieren\n          ein neuronales Netz auf der Grundlage des MNIST-Datensatzes für die Erkennung handgeschriebener Ziffern zu trainieren.\n        "
   }
 }
