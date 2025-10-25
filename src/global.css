@@ -343,6 +343,36 @@ blockquote p {
 	display: inline;
 }
 
+blockquote.info,
+blockquote.note,
+blockquote.tip,
+blockquote.hint {
+	border-left-color: var(--color-accent);
+	background: rgba(33, 150, 243, 0.08);
+	/* box-shadow: 0 0 6px rgba(33, 150, 243, 0.3); */
+	quotes: "" "";
+}
+
+blockquote.warn,
+blockquote.warning,
+blockquote.caution,
+blockquote.attention {
+	border-left-color: var(--color-warning);
+	background: rgba(255, 152, 0, 0.08);
+	/* box-shadow: 0 0 6px rgba(255, 152, 0, 0.3); */
+	quotes: "" "";
+}
+
+blockquote.error,
+blockquote.danger,
+blockquote.alert,
+blockquote.fail {
+	border-left-color: var(--color-danger);
+	background: rgba(244, 67, 54, 0.08);
+	/* box-shadow: 0 0 6px rgba(244, 67, 54, 0.3); */
+	quotes: "" "";
+}
+
 sup {
 	font-size: 0.75em;
 	line-height: 0;

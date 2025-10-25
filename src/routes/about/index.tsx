@@ -30,8 +30,7 @@ export default component$(() => {
         <div class={styles.left}>
           <p>
             {$localize`Hey there! I'm Fabian Schuster, a`} {age.value} {$localize`year old software developer from Germany. Currently, I'm
-            pursuing a dual study program in computer science, combining theoretical knowledge with actual work
-            experience in software development. My interest in programming began years ago when building my first
+            working as a Software Developer at SPEKTRA, doing a variety of tasks. My interest in programming began years ago when building my first
             program for a graphics calculator in school. Since then, my passion for coding only grew stronger,
             leading me to explore various programming languages and technologies. My experience ranges from
             small, elegant solutions to complex, large-scale applications for a variety of different areas.`}

@@ -15,7 +15,7 @@ interface MenuNode {
 	items: MenuItem[];
 }
 
-const ROOT_DIR = join(process.env.HOME || "", "src/routes");
+const ROOT_DIR = join(__dirname, "..", "src", "routes");
 
 /**
  * Scan a directory recursively for .mdx files.

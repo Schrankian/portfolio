@@ -2,7 +2,7 @@ import { Frequency } from "~/components/SkillProficiency";
 
 export const skillDate = new Date('2025-10-02');
 export const skills = {
-	"Languages": {
+	[$localize`Languages`]: {
 		"JavaScript": { score: 90, frequency: Frequency.DAILY },
 		"TypeScript": { score: 90, frequency: Frequency.DAILY },
 		"Rust": { score: 80, frequency: Frequency.WEEKLY },
@@ -11,7 +11,7 @@ export const skills = {
 		"C#": { score: 30, frequency: Frequency.RARELY },
 		"Python": { score: 80, frequency: Frequency.WEEKLY },
 	},
-	"Frameworks": {
+	[$localize`Frameworks`]: {
 		"Vue.js": { score: 20, frequency: Frequency.RARELY },
 		"Angular": { score: 80, frequency: Frequency.DAILY },
 		"Next.js": { score: 90, frequency: Frequency.MONTHLY },
@@ -20,7 +20,7 @@ export const skills = {
 		"Tauri": { score: 80, frequency: Frequency.MONTHLY },
 		"Flutter": { score: 80, frequency: Frequency.MONTHLY }
 	},
-	"Tools": {
+	[$localize`Tools`]: {
 		"Kerberos": { score: 90, frequency: Frequency.WEEKLY },
 		"Git": { score: 95, frequency: Frequency.DAILY },
 		"Docker": { score: 90, frequency: Frequency.DAILY },

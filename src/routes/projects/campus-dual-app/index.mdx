@@ -7,9 +7,12 @@ showInHeader: true
 mdxLayout: true
 ---
 import { MDXHeader } from '~/components/MDXHeader';
+import { LanguageFilter, Translation } from '~/components/Translation';
 
 <MDXHeader />
 
+<Translation>
+<LanguageFilter lang="en" fallbackFor={["de"]}>
 This app was a personal project to provide an alternative interface for myself and other students of the Duale Hochschule Sachsen to access their data.
 I was quite dissatisfied with the official web app being the only way to access grades, schedules and other important information. There were some other,
 inofficial apps, but they were either not maintained or lacked important features. And I wanted to have a configurable timetable, where I could color or hide
@@ -20,6 +23,7 @@ offline access as well as credential caching, so I could access my data without 
 use it as well, so I decided to publish it to the Play Store. I never intended to maintain it long-term, particuarly since I won't be a student at the Duale 
 Hochschule Sachsen for much longer. However I still want to keep it available for those who find it useful and I am happy to pass it on to someone else who
 wants to maintain it in the future.
+
 
 ## Technologies Used
 - Flutter (the main framework for building the app)
@@ -42,3 +46,5 @@ wants to maintain it in the future.
 - **Logging:** Due to the scraping nature, it would be beneficial to implement logging to help diagnose issues. 
 - **Platform Expansion:** Consider future support for other platforms, such as iOS or web.  
 - **Refactoring:** The current codebase works, but it could benefit from refactoring to improve maintainability and readability. For example, migrating to Riverpod for state management and using more idiomatic Dart/Flutter practices.
+</LanguageFilter>
+</Translation>

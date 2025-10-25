@@ -130,9 +130,8 @@ bun run i18n-extract
 bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically translate all strings
 ```
 
-# TODOS till publishing
-- [ ] Make sure there are no more TODOs (and all TODO mdx-pages are prefixed with `_`)
-- [ ] Add translations to mdx pages
+# TOdOS till publishing
+- [x] Add option to translate mdx pages
 - [ ] Make sure the translations sound good
 - [ ] Make sure the website feels functional and responsive on all devices
 - [ ] Change avatar image
@@ -140,6 +139,8 @@ bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically 
 - [ ] Implement ci/cd pipeline
 
 ## After publishing
+- [ ] Add cookies notice
+- [ ] Translate privacy policy to all languages
 - [ ] Add more projects
 - [ ] Add blog posts
 - [ ] Implement tests
