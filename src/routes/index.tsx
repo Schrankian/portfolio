@@ -1,7 +1,7 @@
 import { $, component$ } from '@builder.io/qwik';
 import styles from './home.module.css'
 import { GoChevronDown24 } from '@qwikest/icons/octicons';
-import ImageAvatar from '~/assets/images/avatar.png?w=300&h=300&jsx';
+import ImageAvatar from '~/assets/images/personal-transparent.png?w=300&h=400&jsx';
 import { SocialLinks } from '~/components/SocialLinks';
 import { DocumentHead } from '@builder.io/qwik-city';
 
