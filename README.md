@@ -132,7 +132,7 @@ bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically 
 
 # TOdOS till publishing
 - [x] Add option to translate mdx pages
-- [ ] Make sure the translations sound good
+- [x] Make sure the translations sound good
 - [ ] Make sure the website feels functional and responsive on all devices
 - [ ] Change avatar image
 - [ ] Review skill list
@@ -144,3 +144,4 @@ bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically 
 - [ ] Add more projects
 - [ ] Add blog posts
 - [ ] Implement tests
+- [ ] Improve mdx Layout (progress, jump to top, content overview, etc...)

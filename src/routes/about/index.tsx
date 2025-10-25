@@ -25,11 +25,11 @@ export default component$(() => {
 
   return (
     <div class={styles.container}>
-      <h1>About Me</h1>
+      <h1>{$localize`About Me`}</h1>
       <div class={styles.aboutContainer}>
         <div class={styles.left}>
           <p>
-            {$localize`Hey there! I'm Fabian Schuster, a`} {age.value} {$localize`year old software developer from Germany. Currently, I'm
+            {$localize`Hey there! I'm Fabian Schuster, a ${age.value} year old software developer from Germany. Currently, I'm
             working as a Software Developer at SPEKTRA, doing a variety of tasks. My interest in programming began years ago when building my first
             program for a graphics calculator in school. Since then, my passion for coding only grew stronger,
             leading me to explore various programming languages and technologies. My experience ranges from
@@ -64,8 +64,7 @@ export default component$(() => {
       <h2>{$localize`Skills`}</h2>
       <blockquote>
         <p>
-          {$localize`The following skills are based on my current knowledge and experience as of`} {skillDate.toLocaleDateString()}.
-          {$localize`There is an algorithm in place that tries to estimate the current proficiency level of each skill based
+          {$localize`The following skills are based on my current knowledge and experience as of ${skillDate.toLocaleDateString()}. There is an algorithm in place that tries to estimate the current proficiency level of each skill based
           on how often I use it. However it's not perfect and may not reflect my actual proficiency accurately.`}
         </p>
       </blockquote>
