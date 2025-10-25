@@ -140,7 +140,7 @@ bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically 
 
 ## After publishing
 - [ ] Add cookies notice
-- [ ] Translate privacy policy to all languages
+- [x] Translate privacy policy to all languages
 - [ ] Add more projects
 - [ ] Add blog posts
 - [ ] Implement tests
