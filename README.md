@@ -130,15 +130,9 @@ bun run i18n-extract
 bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically translate all strings
 ```
 
-# TOdOS till publishing
-- [x] Add option to translate mdx pages
-- [x] Make sure the translations sound good
-- [x] Make sure the website feels functional and responsive on all devices
-- [ ] Change avatar image (missing the about me part)
-- [ ] Review skill list
-- [ ] Implement ci/cd pipeline
-
 ## After publishing
+- [ ] SEO optimization
+- [ ] Finish README.md
 - [ ] Add cookies notice
 - [x] Translate privacy policy to all languages
 - [ ] Add more projects
