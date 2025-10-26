@@ -5,8 +5,8 @@ import { Cookie } from "@builder.io/qwik-city";
 import type { RenderOptions } from "@builder.io/qwik/server";
 
 // You must declare all your locales here
-import EN from "./locales/message-en.json";
-import DE from "./locales/message-de.json";
+import EN from "../locales/message-en.json";
+import DE from "../locales/message-de.json";
 export const SUPPORTED_LOCALES = ["en", "de"];
 // Make sure it's obvious when the default locale was selected
 const defaultLocale = "de";

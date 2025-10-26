@@ -5,7 +5,7 @@ import { RestoreColorScheme } from "./components/DarkModeToggle";
 
 import "./global.css";
 import { SettingsProvider } from "./components/SettingsProvider";
-import { useI18n } from "./i18n";
+import { useI18n } from "./utils/i18n";
 
 export default component$(() => {
   /**

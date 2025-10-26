@@ -6,10 +6,10 @@ It should be fairly up to date with my GitHub/Linkedin profiles.
 
 ## 🚀 Noteable features
 
-- **Excelent LightHouse performance**
+- **Excellent LightHouse performance**
 - **Modern design**
-- **Maximum responsivenes** [In progres...]
-- **Natural animations** [In progress...]
+- **Full responsiveness**
+- **Natural animations**
 
 ## ⚙️ Technologies
 - **[QwikCity](https://qwik.dev/qwikcity/overview/)** - A meta-framework built on top of [Qwik](https://qwik.dev/)
@@ -18,51 +18,35 @@ It should be fairly up to date with my GitHub/Linkedin profiles.
 
 ## Project Structure
 
-[In progress...]
+- `public/` - Static assets, e.g. files that should be served as-is from the root
+- `scripts/` - Helper scripts for various tasks, that are not part of the main application
+- `src/` - The main application source code
+- `src/components/` - Reusable components
+- `src/routes/` - Application routes (pages)
+- `src/utils/` - Utility functions
+- `src/assets/` - Images, fonts, and other assets used in the application
+- `src/locales/` - Translation files for different languages
 
 ## 📖 Deployment
 
-[In progress...]
+Every commit to the `main` branch triggers a deployment to Cloudflare Pages. But in general, it does the following steps:
 
 Build the app
 ```shell
 bun run build
 ```
 
+Deploy the `dist` folder to Cloudflare Pages
+```shell
+bun run deploy
+```
+
+--
+
 (Optional) Preview the production build - a little bit more accurate than `bun preview`
 ```shell
 bun serve
 ```
-
-### Function Invocation Routes
-
-Cloudflare Page's [function-invocation-routes config](https://developers.cloudflare.com/pages/platform/functions/routing/#functions-invocation-routes) can be used to include, or exclude, certain paths to be used by the worker functions. Having a `_routes.json` file gives developers more granular control over when your Function is invoked.
-This is useful to determine if a page response should be Server-Side Rendered (SSR) or if the response should use a static-site generated (SSG) `index.html` file.
-
-By default, the Cloudflare pages adaptor _does not_ include a `public/_routes.json` config, but rather it is auto-generated from the build by the Cloudflare adaptor. An example of an auto-generate `dist/_routes.json` would be:
-
-```
-{
-  "include": [
-    "/*"
-  ],
-  "exclude": [
-    "/_headers",
-    "/_redirects",
-    "/build/*",
-    "/favicon.ico",
-    "/manifest.json",
-    "/service-worker.js",
-    "/about"
-  ],
-  "version": 1
-}
-```
-
-In the above example, it's saying _all_ pages should be SSR'd. However, the root static files such as `/favicon.ico` and any static assets in `/build/*` should be excluded from the Functions, and instead treated as a static file.
-
-In most cases the generated `dist/_routes.json` file is ideal. However, if you need more granular control over each path, you can instead provide you're own `public/_routes.json` file. When the project provides its own `public/_routes.json` file, then the Cloudflare adaptor will not auto-generate the routes config and instead use the committed one within the `public` directory.
-
 
 ## 🐳 Development
 
@@ -131,9 +115,8 @@ bun run translate-deepl # Optional. Uses the ./deepl_key.local to automatically 
 ```
 
 ## After publishing
-- [ ] SEO optimization
-- [ ] Finish README.md
-- [ ] Add cookies notice
+- [ ] SEO optimization (for example reduce global.css size to 10kb)
+- [x] Finish README.md
 - [x] Translate privacy policy to all languages
 - [ ] Add more projects
 - [ ] Add blog posts

@@ -9,7 +9,7 @@ import {
   useSignal,
   useTask$,
 } from '@builder.io/qwik';
-import {SUPPORTED_LOCALES} from '../../i18n';
+import {SUPPORTED_LOCALES} from '../../utils/i18n';
 import { arrayEquals } from '~/utils/common';
 import { useLocation } from '@builder.io/qwik-city';
 
