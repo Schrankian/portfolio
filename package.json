@@ -13,7 +13,7 @@
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "wrangler pages deploy ./dist",
+    "deploy": "wrangler pages deploy ./dist --project-name=portfolio",
     "dev": "bun generate:menu && vite --mode ssr",
     "dev.debug": "bun generate:menu && node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
