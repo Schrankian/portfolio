@@ -2,6 +2,7 @@ import { component$, useComputed$ } from '@builder.io/qwik';
 import { DocumentHead, Link } from '@builder.io/qwik-city';
 import { SkillProficiency } from '~/components/SkillProficiency';
 import { skillDate, skills } from './skills';
+import ImageAvatar from '~/assets/images/personal-transparent.png?w=200&h=300&jsx';
 import styles from './about.module.css';
 
 
@@ -56,7 +57,7 @@ export default component$(() => {
           </p>
         </div>
         <div class={styles.right}>
-          Thats me
+          <ImageAvatar alt="Fabian Schuster" class="rounded-full" />
         </div>
       </div>
       <div class="divider-horizontal mb-5" />
