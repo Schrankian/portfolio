@@ -3,7 +3,7 @@ import { Header } from '~/components/Header';
 import { Footer } from '~/components/Footer';
 import { BackgroundCanvas } from '~/components/BackgroundCanvas';
 import { RequestHandler, useDocumentHead } from '@builder.io/qwik-city';
-import { extractLang } from "~/i18n";
+import { extractLang } from "~/utils/i18n";
 import { Conditional } from '~/components/Conditional';
 import { SettingsContext } from '~/components/SettingsProvider';
 

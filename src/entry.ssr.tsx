@@ -15,7 +15,7 @@ import {
   type RenderToStreamOptions,
 } from "@builder.io/qwik/server";
 import Root from "./root";
-import { extractBase } from "./i18n";
+import { extractBase } from "./utils/i18n";
 
 export default function (opts: RenderToStreamOptions) {
   return renderToStream(<Root />, {
